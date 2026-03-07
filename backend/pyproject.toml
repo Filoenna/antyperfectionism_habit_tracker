@@ -1,0 +1,14 @@
+[project]
+name = "Soft_Habit_Tracker"
+version = "0.1.0"
+description = "Soft habit tracker"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "alembic>=1.18.4",
+    "fastapi>=0.135.1",
+    "psycopg[binary]>=3.3.3",
+    "pydantic-settings>=2.13.1",
+    "sqlalchemy>=2.0.48",
+    "uvicorn>=0.41.0",
+]
