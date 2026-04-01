@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.models.habit import Habit as HabitModel
 from app.schemas.habit import HabitCreate, Habit
-from app.db import SessionLocal, get_db
+from app.db import get_db
 
 router = APIRouter(prefix="/habits", tags=["habits"])
 
