@@ -3,16 +3,9 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.models.habit import Habit as HabitModel
 from app.schemas.habit import HabitCreate, Habit
-from app.db import SessionLocal
+from app.db import SessionLocal, get_db
 
 router = APIRouter(prefix="/habits", tags=["habits"])
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 @router.post("/", response_model=Habit)
 def create_habit(habit: HabitCreate, db: Session = Depends(get_db)) -> Habit:
