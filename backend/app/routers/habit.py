@@ -25,7 +25,7 @@ def create_habit(habit: HabitCreate, db: Session = Depends(get_db)) -> Habit:
     db.refresh(db_habit)
     return db_habit
 
-@router.get("/", response_model=list[Habit])
+@router.get("", response_model=list[Habit])
 def read_habits(db: Session = Depends(get_db)) -> list[Habit]:
     habits = db.query(HabitModel).all()
     return habits
