@@ -78,3 +78,5 @@ backend/uv.lock
 backend/.python-version
 
 frontend/node_modules
+
+frontend/src/main.js.map
