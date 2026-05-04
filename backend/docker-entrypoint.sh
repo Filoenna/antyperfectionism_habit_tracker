@@ -3,7 +3,7 @@ set -e
 
 cd /app
 
-echo "Running database migrations..."
+echo "Running database migrations to be sure..."
 uv run alembic upgrade head
 
 echo "Starting backend..."
