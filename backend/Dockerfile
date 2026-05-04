@@ -22,5 +22,8 @@ RUN uv sync --frozen
 # Copy the rest of the application code into the container
 COPY . .
 
-# Command to run the application
-CMD ["uv", "run", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+# Make the entrypoint script executable
+RUN chmod +x ./docker-entrypoint.sh
+
+# Command to run migrations then start the application
+CMD ["./docker-entrypoint.sh"]

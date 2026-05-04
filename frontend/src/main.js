@@ -3,17 +3,11 @@ import App from './App.vue';
 import PrimeVue from 'primevue/config';
 import Aura from '@primeuix/themes/aura';
 import { definePreset } from '@primeuix/themes';
-
 import Button from 'primevue/button';
 import 'primeicons/primeicons.css';
-import Ripple from 'primevue/ripple';
-import Dialog from 'primevue/dialog';
-import Textarea from 'primevue/textarea';
-import InputNumber from 'primevue/inputnumber';
 
 
 const app = createApp(App);
-
 const MyPreset = definePreset(Aura, {
     semantic: {
         primary: {
@@ -31,7 +25,6 @@ const MyPreset = definePreset(Aura, {
         }
     }
 });
-
 app.use(PrimeVue, {
     // Default theme configuration
     theme: {
@@ -42,11 +35,6 @@ app.use(PrimeVue, {
             cssLayer: false
         }
     }
- });
+});
 app.component('Button', Button);
-app.component('Dialog', Dialog);
-app.component('Textarea', Textarea);
-app.component('InputNumber', InputNumber);
-app.directive('ripple', Ripple);
 app.mount('#app');
-//# sourceMappingURL=main.js.map
